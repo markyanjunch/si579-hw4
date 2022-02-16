@@ -19,9 +19,12 @@ function addTask(description, dueTime=false) {
     });
 }
 
-// Default tasks shown when opening the page
+// Default tasks shown as soon as the page loads
 addTask("Learn to wrap gifts", 1639944400000);
 addTask("Buy milk");
+addTask("SI579 Problem Set 4", "2/16/2022 03:30:00 PM");
+addTask("SI539 HW3", "2/17/2022 11:59:00 PM");
+addTask("Internship search");
 
 function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
     const dueDate = dateInputElement.valueAsNumber; // Returns the timestamp at midnight for the given date
@@ -39,7 +42,7 @@ function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
 
 // helper function for adding a task after clicking on "Add Task" button or pressing the <ENTER> key in description input box
 function add_task_trigger() {
-    addTask(task_description_input.value, dateAndTimeToTimestamp(duedate_input.value, duetime_input.value));
+    addTask(task_description_input.value, dateAndTimeToTimestamp(duedate_input, duetime_input));
     task_description_input.value = '';
     duedate_input.value = '';
     duetime_input.value = '';
